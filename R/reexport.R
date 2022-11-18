@@ -21,3 +21,12 @@ ggplot2::`%+%`
 #' @importFrom ggplot2 ggplot_add
 #' @export
 ggplot2::ggplot_add
+
+#' @importFrom ggplot2 ggplot_build
+#' @export
+ggplot2::ggplot_build
+
+#' @importFrom patchwork arithmetic_prep
+#' @export
+patchwork::arithmetic_prep
+
