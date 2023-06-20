@@ -36,14 +36,14 @@ jobs:
       - name: get latest release with tag
         id: latestrelease
         run: |
-          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/ddsjoberg/ggsurvfit/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/pharmaverse/ggsurvfit/releases/latest | jq '.tag_name' | sed 's/\"//g')"
       - name: confirm release tag
         run: |
           echo ${{ steps.latestrelease.outputs.releasetag }}
 
       - uses: actions/checkout@v3
         with:
-          repository: 'ddsjoberg/ggsurvfit'
+          repository: 'pharmaverse/ggsurvfit'
           ref: ${{ steps.latestrelease.outputs.releasetag }}
 
       - uses: r-lib/actions/setup-pandoc@v2
