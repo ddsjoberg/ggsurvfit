@@ -1,10 +1,14 @@
-This repository uses GH Actions to build and serve the {ggsurvfit} website. See below for links to the {ggsurvfit} package website and repository.
+# **THIS IS NOT THE REPO FOR THE {ggsurvfit} R PACKAGE.**
+
+### ggsurvfit repository
+
+https://github.com/pharmaverse/ggsurvfit
 
 ### ggsurvfit website
 
 https://www.danieldsjoberg.com/ggsurvfit/
 
-### ggsurvfit repository
+This repository uses GH Actions to build and serve the {ggsurvfit} website. See below for links to the {ggsurvfit} package website and repository.
 
-https://github.com/pharmaverse/ggsurvfit
+
 
