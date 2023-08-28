@@ -44,7 +44,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +81,7 @@
 
       <ul class="navbar-nav">
 <li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/ddsjoberg/ggsurvfit/" aria-label="github">
+  <a class="external-link nav-link" href="https://github.com/pharmaverse/ggsurvfit/" aria-label="github">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -122,18 +122,18 @@
 <p>Install <strong>ggsurvfit</strong> from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggsurvfit"</span><span class="op">)</span></span></code></pre></div>
-<p>You can install the development version from <a href="https://github.com/ddsjoberg/ggsurvfit" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version from <a href="https://github.com/pharmaverse/ggsurvfit" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ddsjoberg/ggsurvfit"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"pharmaverse/ggsurvfit"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h2>
-<p>Review the <a href="http://www.danieldsjoberg.com/ggsurvfit/articles/gallery.html"><strong>figure gallery</strong></a> for many more examples.</p>
+<p>Review the <a href="https://www.danieldsjoberg.com/ggsurvfit/articles/gallery.html" class="external-link"><strong>figure gallery</strong></a> for many more examples.</p>
 <p>The code below constructs a basic {ggsurvfit} figure without customization.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/ggsurvfit" class="external-link">ggsurvfit</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/pharmaverse/ggsurvfit" class="external-link">ggsurvfit</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: ggplot2</span></span>
 <span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/survfit2.html">survfit2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span> <span class="op">~</span> <span class="va">surg</span>, data <span class="op">=</span> <span class="va">df_colon</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -174,7 +174,7 @@
 <div class="section level2">
 <h2 id="cdisc-adam-adtte">CDISC ADaM ADTTE<a class="anchor" aria-label="anchor" href="#cdisc-adam-adtte"></a>
 </h2>
-<p>The package also includes gems for those using the <a href="https://www.cdisc.org/standards/foundational/adam/adam-basic-data-structure-bds-time-event-tte-analyses-v1-0" class="external-link">CDISC ADaM ADTTE</a> data model.</p>
+<p>The package also includes gems for those using the <a href="https://www.cdisc.org/standards/foundational/adam/adam-basic-data-structure-bds-time-event-tte-analyses-v1-0" class="external-link">CDISC ADaM ADTTE v1.0</a> data model.</p>
 <p>If columns <code>"PARAM"</code> or <code>"PARAMCD"</code> are present in the data frame passed to <code><a href="reference/survfit2.html">survfit2()</a></code>, their values will be used to construct default labels in the <code><a href="reference/ggsurvfit.html">ggsurvfit()</a></code> figure.</p>
 <p>The event indicator in ADTTE data sets is named <code>"CNSR"</code> and is coded in the opposite way the survival package expects outcomes—<code>1 = 'censored'</code> and <code>0 = 'event'</code>. This difference creates an opportunity for errors to be introduced in an analysis. The <strong>ggsurvfit</strong> package exports a function called <code><a href="reference/Surv_CNSR.html">Surv_CNSR()</a></code> to resolve this concern. The function creates a survival object (e.g. <code><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">survival::Surv()</a></code>) that uses CDISC ADaM ADTTE coding conventions as the default values. The function can be used in <strong>ggsurvfit</strong> as well as any other package that uses <code><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">survival::Surv()</a></code>.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -194,8 +194,8 @@
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=ggsurvfit" class="external-link">View on CRAN</a></li>
-<li><a href="https://github.com/ddsjoberg/ggsurvfit/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/ddsjoberg/ggsurvfit/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/pharmaverse/ggsurvfit/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/pharmaverse/ggsurvfit/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -228,6 +228,7 @@
 <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a> <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0003-0862-2018" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>
 <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a> <br><small class="roles"> Author </small>  </li>
+<li>Charlotta Fruechtenicht <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-6689-6423" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Steven Haesendonckx <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0001-8222-3686" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Tim Treis <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-9686-4799" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
@@ -241,7 +242,7 @@
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Steven Haesendonckx, Tim Treis.</p>
+<p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
 </div>
 
 <div class="pkgdown-footer-right">
