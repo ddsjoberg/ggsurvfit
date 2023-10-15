@@ -35,7 +35,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.1.9001</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.1.9002</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -350,7 +350,7 @@ file format, the DPI, the height and width of a the image, and more.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_to_image</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"image.png"</span><span class="op">)</span></span>
 <span><span class="va">path_to_image</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpH4zvSe/image.png"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmpd1mJ1Q/image.png"</span></span>
 <span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_to_image</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.29 x 4.51 in image</span></span></code></pre></div>
@@ -430,12 +430,31 @@ theme along with these function options.</p>
 <p><img src="gallery_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 </div>
 <div class="section level2">
+<h2 id="swap-linetype-color-aesthetics">Swap Linetype &amp; Color Aesthetics<a class="anchor" aria-label="anchor" href="#swap-linetype-color-aesthetics"></a>
+</h2>
+<p>By default, a model plot created with <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code> or
+<code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the color aesthetic to plot curves by the
+stratifying variable(s), and further, <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the
+linetype aesthetic for plots that contain multiple outcomes
+(i.e. competing events). There is a global option
+<code>"ggsurvfit.switch-color-linetype"</code> to switch these defaults,
+giving users more flexibility over the output figures. Reivew
+<code><a href="../reference/ggsurvfit_options.html">?ggsurvfit_options</a></code> for details.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span><span class="st">"ggsurvfit.switch-color-linetype"</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tidycmprsk</span><span class="fu">::</span><span class="fu"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/cuminc.html" class="external-link">cuminc</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ttdeath</span>, <span class="va">death_cr</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>, <span class="fu">tidycmprsk</span><span class="fu">::</span><span class="va"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/trial.html" class="external-link">trial</a></span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/ggcuminc.html">ggcuminc</a></span><span class="op">(</span>outcome <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"death from cancer"</span>, <span class="st">"death other causes"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="gallery_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
+</div>
+<div class="section level2">
 <h2 id="adjusted-cox-models">Adjusted Cox Models<a class="anchor" aria-label="anchor" href="#adjusted-cox-models"></a>
 </h2>
 <p>The ggsurvfit supports printing adjusted Cox Proportion Hazards
 Regression models. Any stratifying levels must be wrapped in a
 <code><a href="https://rdrr.io/pkg/survival/man/strata.html" class="external-link">strata()</a></code> call in the RHS of the formula.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/coxph.html" class="external-link">coxph</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/strata.html" class="external-link">strata</a></span><span class="op">(</span><span class="va">surg</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">df_colon</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
@@ -444,7 +463,7 @@ Regression models. Any stratifying levels must be wrapped in a
 <span>  <span class="fu"><a href="../reference/add_confidence_interval.html">add_confidence_interval</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="gallery_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
+<p><img src="gallery_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
