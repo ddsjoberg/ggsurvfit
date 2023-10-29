@@ -12,7 +12,7 @@ number of censored observations."><meta property="og:image" content="http://www.
     
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.1.9002</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.1.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,6 +158,550 @@ and multiply them by 100.</p>
 <span>      <span class="st">"{round(estimate*100)}% ({round(conf.low*100)}, {round(conf.high*100)})"</span><span class="op">)</span>,</span>
 <span>  stats_label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"At Risk (Cum. Events)"</span>, <span class="st">"Survival (95% CI)"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre><p></p></div>
+    </div>
+    <div class="section level2">
+    <h2 id="formatting-numbers">Formatting Numbers<a class="anchor" aria-label="anchor" href="#formatting-numbers"></a></h2>
+    
+
+<p>You can also pass <a href="https://glue.tidyverse.org/" class="external-link">glue</a>-like syntax to
+<code>risktable_stats</code> to format the numbers displayed in
+the risk table. This is particularly helpful when working with weighted
+<code>survfit2</code> objects for which the risk table may display too many decimals by
+default e.g., for weighted patients at risk.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span></span>
+<span>  risktable_stats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"{format(round(n.risk, 2), nsmall = 2)}"</span>,</span>
+<span>                      <span class="st">"{format(round(n.event, 2), nsmall = 2)}"</span><span class="op">)</span>,</span>
+<span>  stats_label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"N effective patients at risk"</span>,</span>
+<span>                  <span class="st">"N effective events"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; list()</span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")</span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$times</span></span>
+<span><span class="co">#&gt; NULL</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$risktable_stats</span></span>
+<span><span class="co">#&gt; [1] "{format(round(n.risk, 2), nsmall = 2)}" </span></span>
+<span><span class="co">#&gt; [2] "{format(round(n.event, 2), nsmall = 2)}"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$stats_label</span></span>
+<span><span class="co">#&gt; [1] "N effective patients at risk" "N effective events"          </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$combine_groups</span></span>
+<span><span class="co">#&gt; [1] FALSE</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$risktable_group</span></span>
+<span><span class="co">#&gt; [1] "auto"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$risktable_height</span></span>
+<span><span class="co">#&gt; NULL</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$theme</span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$theme[[1]]</span></span>
+<span><span class="co">#&gt; List of 97</span></span>
+<span><span class="co">#&gt;  $ line                      :List of 6</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "black"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : num 1</span></span>
+<span><span class="co">#&gt;   ..$ lineend      : chr "butt"</span></span>
+<span><span class="co">#&gt;   ..$ arrow        : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_line" "element"</span></span>
+<span><span class="co">#&gt;  $ rect                      :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : chr "white"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "black"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : num 1</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ text                      :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : chr ""</span></span>
+<span><span class="co">#&gt;   ..$ face         : chr "plain"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "black"</span></span>
+<span><span class="co">#&gt;   ..$ size         : num 11</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ angle        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : num 0.9</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ title                     : NULL</span></span>
+<span><span class="co">#&gt;  $ aspect.ratio              : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.title                : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.title.x              :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 2.75points 0points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.title.x.top          :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 2.75points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.title.x.bottom       : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.title.y              :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : num 90</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 2.75points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.title.y.left         : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.title.y.right        :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ angle        : num -90</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.75points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text                 :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey30"</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 0.8</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.x               :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 2.2points 0points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.x.top           :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 2.2points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.x.bottom        : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.text.y               :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 2.2points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.y.left          : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.text.y.right         :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 0points 2.2points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.ticks                :List of 6</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey20"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineend      : NULL</span></span>
+<span><span class="co">#&gt;   ..$ arrow        : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_line" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.x              : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.x.top          : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.x.bottom       : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.y              : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.y.left         : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.y.right        : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length         : 'simpleUnit' num 2.75points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.x       : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.x.top   : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.x.bottom: NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.y       : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.y.left  : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.ticks.length.y.right : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line                 : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.line.x               : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line.x.top           : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line.x.bottom        : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line.y               : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line.y.left          : NULL</span></span>
+<span><span class="co">#&gt;  $ axis.line.y.right         : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.background         :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : logi NA</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.margin             : 'margin' num [1:4] 5.5points 5.5points 5.5points 5.5points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ legend.spacing            : 'simpleUnit' num 11points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ legend.spacing.x          : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.spacing.y          : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.key                :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : chr "white"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : logi NA</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.key.size           : 'simpleUnit' num 1.2lines</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 3</span></span>
+<span><span class="co">#&gt;  $ legend.key.height         : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.key.width          : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.text               :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 0.8</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.text.align         : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.title              :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.title.align        : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.position           : chr "right"</span></span>
+<span><span class="co">#&gt;  $ legend.direction          : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.justification      : chr "center"</span></span>
+<span><span class="co">#&gt;  $ legend.box                : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.box.just           : NULL</span></span>
+<span><span class="co">#&gt;  $ legend.box.margin         : 'margin' num [1:4] 0cm 0cm 0cm 0cm</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 1</span></span>
+<span><span class="co">#&gt;  $ legend.box.background     : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.box.spacing        : 'simpleUnit' num 11points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ panel.background          :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : chr "white"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : logi NA</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.border              :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : logi NA</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey20"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.spacing             : 'simpleUnit' num 5.5points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ panel.spacing.x           : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.spacing.y           : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.grid                :List of 6</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey92"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineend      : NULL</span></span>
+<span><span class="co">#&gt;   ..$ arrow        : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_line" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.grid.major          : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.grid.minor          :List of 6</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : 'rel' num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineend      : NULL</span></span>
+<span><span class="co">#&gt;   ..$ arrow        : logi FALSE</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_line" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.grid.major.x        : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.grid.major.y        : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.grid.minor.x        : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.grid.minor.y        : NULL</span></span>
+<span><span class="co">#&gt;  $ panel.ontop               : logi FALSE</span></span>
+<span><span class="co">#&gt;  $ plot.background           :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "white"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.title                :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 1.2</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 5.5points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.title.position       : chr "panel"</span></span>
+<span><span class="co">#&gt;  $ plot.subtitle             :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 0points 0points 5.5points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.caption              :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 0.8</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 5.5points 0points 0points 0points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.caption.position     : chr "panel"</span></span>
+<span><span class="co">#&gt;  $ plot.tag                  :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 1.2</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0.5</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.tag.position         : chr "topleft"</span></span>
+<span><span class="co">#&gt;  $ plot.margin               : 'margin' num [1:4] 5.5points 5.5points 5.5points 5.5points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ strip.background          :List of 5</span></span>
+<span><span class="co">#&gt;   ..$ fill         : chr "grey85"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey20"</span></span>
+<span><span class="co">#&gt;   ..$ linewidth    : NULL</span></span>
+<span><span class="co">#&gt;   ..$ linetype     : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_rect" "element"</span></span>
+<span><span class="co">#&gt;  $ strip.background.x        : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.background.y        : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.clip                : chr "inherit"</span></span>
+<span><span class="co">#&gt;  $ strip.placement           : chr "inside"</span></span>
+<span><span class="co">#&gt;  $ strip.text                :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "grey10"</span></span>
+<span><span class="co">#&gt;   ..$ size         : 'rel' num 0.8</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : 'margin' num [1:4] 4.4points 4.4points 4.4points 4.4points</span></span>
+<span><span class="co">#&gt;   .. ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ strip.text.x              : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.text.x.bottom       : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.text.x.top          : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.text.y              :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : num -90</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ strip.text.y.left         :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : num 90</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi TRUE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ strip.text.y.right        : NULL</span></span>
+<span><span class="co">#&gt;  $ strip.switch.pad.grid     : 'simpleUnit' num 2.75points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  $ strip.switch.pad.wrap     : 'simpleUnit' num 2.75points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  - attr(*, "class")= chr [1:2] "theme" "gg"</span></span>
+<span><span class="co">#&gt;  - attr(*, "complete")= logi TRUE</span></span>
+<span><span class="co">#&gt;  - attr(*, "validate")= logi TRUE</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$theme[[2]]</span></span>
+<span><span class="co">#&gt; List of 11</span></span>
+<span><span class="co">#&gt;  $ axis.title.x    :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : num 9</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 1</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi FALSE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.x     : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.text.y     :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : chr "plain"</span></span>
+<span><span class="co">#&gt;   ..$ colour       : chr "black"</span></span>
+<span><span class="co">#&gt;   ..$ size         : num 10</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi FALSE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.ticks      : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ axis.line       : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ legend.position : chr "none"</span></span>
+<span><span class="co">#&gt;  $ panel.border    : list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.grid.major: list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ panel.grid.minor: list()</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_blank" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.title      :List of 11</span></span>
+<span><span class="co">#&gt;   ..$ family       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ face         : NULL</span></span>
+<span><span class="co">#&gt;   ..$ colour       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ size         : num 10.8</span></span>
+<span><span class="co">#&gt;   ..$ hjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ vjust        : num 0</span></span>
+<span><span class="co">#&gt;   ..$ angle        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ lineheight   : NULL</span></span>
+<span><span class="co">#&gt;   ..$ margin       : NULL</span></span>
+<span><span class="co">#&gt;   ..$ debug        : NULL</span></span>
+<span><span class="co">#&gt;   ..$ inherit.blank: logi FALSE</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "class")= chr [1:2] "element_text" "element"</span></span>
+<span><span class="co">#&gt;  $ plot.margin     : 'simpleUnit' num [1:4] 0points 5.5points 0points 5.5points</span></span>
+<span><span class="co">#&gt;   ..- attr(*, "unit")= int 8</span></span>
+<span><span class="co">#&gt;  - attr(*, "class")= chr [1:2] "theme" "gg"</span></span>
+<span><span class="co">#&gt;  - attr(*, "complete")= logi FALSE</span></span>
+<span><span class="co">#&gt;  - attr(*, "validate")= logi TRUE</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$theme[[3]]</span></span>
+<span><span class="co">#&gt; $x</span></span>
+<span><span class="co">#&gt; NULL</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"class")</span></span>
+<span><span class="co">#&gt; [1] "labels"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$theme[[4]]</span></span>
+<span><span class="co">#&gt; $y</span></span>
+<span><span class="co">#&gt; NULL</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"class")</span></span>
+<span><span class="co">#&gt; [1] "labels"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"add_risktable")$size</span></span>
+<span><span class="co">#&gt; [1] 3.5</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attr(,"class")</span></span>
+<span><span class="co">#&gt; [1] "add_risktable"</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="competing-risks">Competing Risks<a class="anchor" aria-label="anchor" href="#competing-risks"></a></h2>
