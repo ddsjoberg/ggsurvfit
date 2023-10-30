@@ -58,9 +58,6 @@
     <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/adtte.html</loc>
   </url>
   <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/align_plots.html</loc>
-  </url>
-  <url>
     <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/df_colon.html</loc>
   </url>
   <url>
@@ -77,6 +74,9 @@
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit.html</loc>
+  </url>
+  <url>
+    <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit_align_plots.html</loc>
   </url>
   <url>
     <loc>http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit_build.html</loc>
