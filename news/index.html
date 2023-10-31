@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,12 @@
       <small>Source: <a href="https://github.com/pharmaverse/ggsurvfit/blob/HEAD/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.0" id="ggsurvfit-100">ggsurvfit 1.0.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-100"></a></h2>
+<ul><li><p>By default, a model plot created with <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code> or <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the color aesthetic to plot curves by the stratifying variable(s), and further, <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the linetype aesthetic for plots that contain multiple outcomes (i.e. competing events). We now introduce the global option <code>"ggsurvfit.switch-color-linetype"</code> to switch these defaults, giving users more flexibility over the output figures. Furthermore, when the <code>linetype_aes=</code> argument is called in a situation when it does not apply, it will be silently ignored (previously, an error message <em>may</em> have been thrown). (<a href="https://github.com/pharmaverse/ggsurvfit/issues/166" class="external-link">#166</a>)</p></li>
+<li><p>Slightly increased the padding to the right of the plot when <code><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit()</a></code> is called. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/165" class="external-link">#165</a>)</p></li>
+<li><p>Now exporting the utility function <code><a href="../reference/ggsurvfit_align_plots.html">ggsurvfit_align_plots()</a></code> that is used to ensure risktable and the primary plot align. By exporting this function, users will now be able to construct custom risktable graphics. See <code>?ggsurvfit_align_plots()</code> for an example. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/175" class="external-link">#175</a>)</p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.1" id="ggsurvfit-031">ggsurvfit 0.3.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-031"></a></h2><p class="text-muted">CRAN release: 2023-08-28</p>
 <ul><li>For transformations in <code><a href="../reference/tidy_survfit.html">tidy_survfit()</a></code> that change the monotonicity of the curve, the <code>conf.low</code> and <code>conf.high</code> column names are now switched. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/154" class="external-link">#154</a>)</li>

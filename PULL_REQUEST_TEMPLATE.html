@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,12 +76,12 @@
 <li>
 <input type="checkbox" disabled>Run <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code>. Check the R console for errors, and review the rendered website.</li>
 <li>
-<input type="checkbox" disabled>Overall code coverage remains &gt;99.5%. Review coverage with <code>withr::with_envvar(new = c("NOT_CRAN" = "true"), covr::report())</code>. Begin in a fresh R session without any packages loaded.</li>
+<input type="checkbox" disabled>Overall code coverage remains &gt;99.5%. Review coverage with <code>withr::with_envvar(list(CI = TRUE), code = devtools::test_coverage())</code>. Begin in a fresh R session without any packages loaded.</li>
 <li>
 <input type="checkbox" disabled>R CMD Check runs without errors, warnings, and notes</li>
 <li>
 <input type="checkbox" disabled><code>usethis::use_spell_check()</code> runs with no spelling errors in documentation</li>
-</ul><p>When the branch is ready to be merged into master: - [ ] Update <code>NEWS.md</code> with the changes from this pull request under the heading “<code># ggsurvfit (development version)</code>”. If there is an issue associated with the pull request, reference it in parentheses at the end update (see <code>NEWS.md</code> for examples). - [ ] Increment the version number using <code>usethis::use_version(which = "dev")</code> - [ ] Run <code>codemetar::write_codemeta()</code> - [ ] Run <code>usethis::use_spell_check()</code> again - [ ] Approve Pull Request - [ ] Merge the PR. Please use “Squash and merge”.</p>
+</ul><p>When the branch is ready to be merged into master: - [ ] Update <code>NEWS.md</code> with the changes from this pull request under the heading “<code># ggsurvfit (development version)</code>”. If there is an issue associated with the pull request, reference it in parentheses at the end update (see <code>NEWS.md</code> for examples). - [ ] Increment the version number using <code>usethis::use_version(which = "dev")</code> - [ ] Run <code>usethis::use_spell_check()</code> again - [ ] Approve Pull Request - [ ] Merge the PR. Please use “Squash and merge”.</p>
 
 
   </main></div>
