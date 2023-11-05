@@ -35,7 +35,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.3.1.9004</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -348,7 +348,7 @@ file format, the DPI, the height and width of a the image, and more.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_to_image</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"image.png"</span><span class="op">)</span></span>
 <span><span class="va">path_to_image</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp0EClwt/image.png"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/RtmpEVr5QM/image.png"</span></span>
 <span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_to_image</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.29 x 4.51 in image</span></span></code></pre></div>
@@ -429,7 +429,7 @@ theme along with these function options.</p>
 <p><img src="gallery_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 </div>
 <div class="section level2">
-<h2 id="swap-linetype-color-aesthetics">Swap Linetype &amp; Color Aesthetics<a class="anchor" aria-label="anchor" href="#swap-linetype-color-aesthetics"></a>
+<h2 id="swap-line-type-color-aesthetics">Swap Line Type &amp; Color Aesthetics<a class="anchor" aria-label="anchor" href="#swap-line-type-color-aesthetics"></a>
 </h2>
 <p>By default, a model plot created with <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code> or
 <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the color aesthetic to plot curves by the
@@ -437,7 +437,7 @@ stratifying variable(s), and further, <code><a href="../reference/ggcuminc.html"
 linetype aesthetic for plots that contain multiple outcomes
 (i.e. competing events). There is a global option
 <code>"ggsurvfit.switch-color-linetype"</code> to switch these defaults,
-giving users more flexibility over the output figures. Reivew
+giving users more flexibility over the output figures. Review
 <code><a href="../reference/ggsurvfit_options.html">?ggsurvfit_options</a></code> for details.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span><span class="st">"ggsurvfit.switch-color-linetype"</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
