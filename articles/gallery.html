@@ -154,7 +154,13 @@ unstratified estimate.</p>
 <span>  <span class="fu"><a href="../reference/ggsurvfit.html">ggsurvfit</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"#508050"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_confidence_interval.html">add_confidence_interval</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"#508050"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 </div>
 <div class="section level2">
@@ -166,7 +172,13 @@ unstratified estimate.</p>
 <span>  <span class="fu"><a href="../reference/ggsurvfit.html">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_confidence_interval.html">add_confidence_interval</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p>You can also group the risk table by the statistics rather than the
 stratum. Let’s also add additional time points where the statistics are
@@ -178,7 +190,13 @@ reported and extend the y axis.</p>
 <span>  <span class="fu"><a href="../reference/add_confidence_interval.html">add_confidence_interval</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span>risktable_group <span class="op">=</span> <span class="st">"risktable_stats"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="va">ggrisktable</span></span></code></pre></div>
+<span><span class="va">ggrisktable</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>Use <code><a href="../reference/add_risktable_strata_symbol.html">add_risktable_strata_symbol()</a></code> to replace long
 stratum labels with a color symbol. The default symbol is a colored
@@ -186,7 +204,19 @@ rectangle and you can change it to any UTF-8 symbol or text string. In
 the example below, we’ve updated the symbol to a circle.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ggrisktable</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/add_risktable_strata_symbol.html">add_risktable_strata_symbol</a></span><span class="op">(</span>symbol <span class="op">=</span> <span class="st">"\U25CF"</span>, size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/add_risktable_strata_symbol.html">add_risktable_strata_symbol</a></span><span class="op">(</span>symbol <span class="op">=</span> <span class="st">"\U25CF"</span>, size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 <p>You can further customize the risk table using themes and the
 <code>add_risktable(...)</code> arguments. For example, use the
@@ -205,7 +235,13 @@ the y-axis label.</p>
 <span>        <span class="fu">theme</span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>face <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span><span class="op">)</span></span>
 <span>      <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 <p>You can also use <a href="https://glue.tidyverse.org/" class="external-link">glue</a>-like
 syntax to place multiple statistics on the same row of the risk
@@ -214,7 +250,13 @@ table.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/survfit2.html">survfit2</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">time</span>, <span class="va">status</span><span class="op">)</span> <span class="op">~</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">df_lung</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/ggsurvfit.html">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span>risktable_stats <span class="op">=</span> <span class="st">"{n.risk} ({cum.event})"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 208 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 208 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 208 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
 <div class="section level2">
@@ -256,7 +298,13 @@ with {patchwork} or {cowplot}.</p>
 <span>  <span class="fu"><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># build plot (which constructs the risktable)</span></span>
-<span><span class="va">built_p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ggsurvfit_build.html">ggsurvfit_build</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">built_p</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ggsurvfit_build.html">ggsurvfit_build</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 750 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <div class="section level4">
 <h4 id="patchwork">patchwork<a class="anchor" aria-label="anchor" href="#patchwork"></a>
 </h4>
@@ -347,7 +395,7 @@ file format, the DPI, the height and width of a the image, and more.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_to_image</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"image.png"</span><span class="op">)</span></span>
 <span><span class="va">path_to_image</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmpelmn8K/image.png"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/RtmpKhwsUX/image.png"</span></span>
 <span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_to_image</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.29 x 4.51 in image</span></span></code></pre></div>
@@ -424,7 +472,19 @@ theme along with these function options.</p>
 <span>  <span class="fu"><a href="../reference/theme_ggsurvfit.html">theme_ggsurvfit_KMunicate</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">scale_x_continuous</span><span class="op">(</span>expand <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.02</span>, <span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.85</span>, <span class="fl">0.85</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.85</span>, <span class="fl">0.85</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2</span></span>
+<span><span class="co">#&gt; 3.5.0.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Please use the `legend.position.inside` argument of `theme()` instead.</span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
+<span><span class="co">#&gt; <span style="color: #555555;">generated.</span></span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
 </div>
 <div class="section level2">
@@ -443,7 +503,13 @@ giving users more flexibility over the output figures. Review
 <span></span>
 <span><span class="fu">tidycmprsk</span><span class="fu">::</span><span class="fu"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/cuminc.html" class="external-link">cuminc</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ttdeath</span>, <span class="va">death_cr</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>, <span class="fu">tidycmprsk</span><span class="fu">::</span><span class="va"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/trial.html" class="external-link">trial</a></span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/ggcuminc.html">ggcuminc</a></span><span class="op">(</span>outcome <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"death from cancer"</span>, <span class="st">"death other causes"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 222 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 222 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 222 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 </div>
 <div class="section level2">
@@ -460,7 +526,13 @@ Regression models. Any stratifying levels must be wrapped in a
 <span>  <span class="fu"><a href="../reference/ggsurvfit.html">ggsurvfit</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_confidence_interval.html">add_confidence_interval</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu">scale_y_continuous</span><span class="op">(</span>limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in ggplot2::geom_blank(): All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span>
+<span><span class="co">#&gt; All aesthetics have length 1, but the data has 815 rows.</span></span>
+<span><span class="co">#&gt; <span style="color: #00BBBB;">ℹ</span> Did you mean to use `annotate()`?</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
