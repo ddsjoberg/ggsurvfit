@@ -16,7 +16,7 @@ all elements are calculable."><meta property="og:image" content="http://www.dani
     
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9000</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9001</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,12 +127,13 @@ all elements are calculable.</p>
 
     <dt><code>robust</code></dt>
 <dd><p>logical, should the function compute a robust variance.
-    For multi-state survival curves this is true by default.
+    For multi-state survival curves or interval censored data
+    this is true by default.
     For single state data see details, below.</p></dd>
 
     <dt><code>istate</code></dt>
 <dd><p>for multi-state models, identifies the initial state of
-    each subject or observation</p></dd>
+    each subject or observation.  This also forces <code>time0 =TRUE</code>.</p></dd>
 
     <dt><code>timefix</code></dt>
 <dd><p>process times through the <code>aeqSurv</code> function to
@@ -147,6 +148,16 @@ all elements are calculable.</p>
 
     <dt><code>error</code></dt>
 <dd><p>this argument is no longer used</p></dd>
+
+    <dt><code>entry</code></dt>
+<dd><p>if TRUE, the output will contain <code>n.enter</code> which is
+    the number of observations entering the risk set at any time; extra
+    rows of output are created, if needed, for each unique entry time.
+    Only applicable if there is an <code>id</code> statement.</p></dd>
+
+    <dt><code>time0</code></dt>
+<dd><p>if TRUE, the output will include estimates at the
+    starting point of the curve or `time 0'.  See discussion below.</p></dd>
 
   
 </dl></dd>
