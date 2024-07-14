@@ -1,126 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/404.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/PULL_REQUEST_TEMPLATE.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/articles/gallery.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/articles/themes.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/authors.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/news/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/Surv_CNSR.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_censor_mark.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_confidence_interval.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_legend_title.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_quantile.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_risktable.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_risktable_strata_symbol.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/adtte.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/df_colon.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/df_lung.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/format_p.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggcuminc.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit-package.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_align_plots.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_build.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_options.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/grid.draw_ggsurvfit.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/print_ggsurvfit.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/scale_ggsurvfit.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/stepribbon.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/survfit2.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/survfit2_p.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/theme_ggsurvfit.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/theme_risktable.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/tidy_cuminc.html</loc>
-  </url>
-  <url>
-    <loc>http://www.danieldsjoberg.com/ggsurvfit/reference/tidy_survfit.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/404.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/CONTRIBUTING.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/LICENSE-text.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/LICENSE.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/PULL_REQUEST_TEMPLATE.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/articles/gallery.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/articles/index.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/articles/themes.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/authors.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/index.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/news/index.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/Surv_CNSR.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_censor_mark.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_confidence_interval.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_legend_title.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_quantile.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_risktable.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/add_risktable_strata_symbol.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/adtte.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/df_colon.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/df_lung.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/format_p.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggcuminc.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit-package.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_align_plots.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_build.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/ggsurvfit_options.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/grid.draw_ggsurvfit.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/index.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/print_ggsurvfit.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/reexports.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/scale_ggsurvfit.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/stepribbon.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/survfit2.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/survfit2_p.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/theme_ggsurvfit.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/theme_risktable.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/tidy_cuminc.html</loc></url>
+<url><loc>http://www.danieldsjoberg.com/ggsurvfit/reference/tidy_survfit.html</loc></url>
 </urlset>
+

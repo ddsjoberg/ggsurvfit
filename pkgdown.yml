@@ -1,11 +1,10 @@
 pandoc: 3.1.11
-pkgdown: 2.0.9
+pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
-  gallery: gallery.html
+  articles/gallery: gallery.html
   themes: themes.html
-last_built: 2024-07-07T03:20Z
+last_built: 2024-07-14T03:21Z
 urls:
   reference: http://www.danieldsjoberg.com/ggsurvfit/reference
   article: http://www.danieldsjoberg.com/ggsurvfit/articles
-
