@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   articles/gallery: gallery.html
   themes: themes.html
-last_built: 2024-11-24T03:29Z
+last_built: 2024-12-01T03:40Z
 urls:
   reference: http://www.danieldsjoberg.com/ggsurvfit/reference
   article: http://www.danieldsjoberg.com/ggsurvfit/articles
