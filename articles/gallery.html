@@ -323,7 +323,7 @@ file format, the DPI, the height and width of a the image, and more.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_to_image</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"image.png"</span><span class="op">)</span></span>
 <span><span class="va">path_to_image</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp5dahZZ/image.png"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/RtmpQH9Yx6/image.png"</span></span>
 <span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_to_image</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.29 x 4.51 in image</span></span></code></pre></div>
@@ -419,10 +419,7 @@ giving users more flexibility over the output figures. Review
 <span></span>
 <span><span class="fu">tidycmprsk</span><span class="fu">::</span><span class="fu"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/cuminc.html" class="external-link">cuminc</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ttdeath</span>, <span class="va">death_cr</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>, <span class="fu">tidycmprsk</span><span class="fu">::</span><span class="va"><a href="https://mskcc-epi-bio.github.io/tidycmprsk/reference/trial.html" class="external-link">trial</a></span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/ggcuminc.html">ggcuminc</a></span><span class="op">(</span>outcome <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"death from cancer"</span>, <span class="st">"death other causes"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Registered S3 method overwritten by 'tidycmprsk':</span></span>
-<span><span class="co">#&gt;   method                    from     </span></span>
-<span><span class="co">#&gt;   global_pvalue_fun.tidycrr gtsummary</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/add_risktable.html">add_risktable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="gallery_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
 </div>
 <div class="section level2">
