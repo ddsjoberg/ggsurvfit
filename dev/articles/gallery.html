@@ -78,8 +78,6 @@
 modifications one can make.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/pharmaverse/ggsurvfit" class="external-link">ggsurvfit</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in get(paste0(generic, ".", class), envir = get_method_env()) : </span></span>
-<span><span class="co">#&gt;   object 'type_sum.accel' not found</span></span>
 <span><span class="co">#&gt; Loading required package: ggplot2</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com" class="external-link">patchwork</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
@@ -326,7 +324,7 @@ file format, the DPI, the height and width of a the image, and more.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">path_to_image</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"image.png"</span><span class="op">)</span></span>
 <span><span class="va">path_to_image</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp8yllsP/image.png"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmpl9nD3Q/image.png"</span></span>
 <span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>file <span class="op">=</span> <span class="va">path_to_image</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Saving 7.29 x 4.51 in image</span></span></code></pre></div>
