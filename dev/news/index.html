@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.0.9001</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.0.9003</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,11 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="ggsurvfit-development-version">ggsurvfit (development version)<a class="anchor" aria-label="anchor" href="#ggsurvfit-development-version"></a></h2>
-<ul><li>Correcting an argument name partial match in <code>ggplot2::scale_*(labels)</code>. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/211" class="external-link">#211</a>, <a href="https://github.com/DanChaltiel" class="external-link">@DanChaltiel</a>)</li>
+<ul><li><p>Improved error message when <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> is called with <code>survfit.coxphms</code> objects. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/222" class="external-link">#222</a>)</p></li>
+<li><p>Fixed <code><a href="../reference/add_risktable.html">add_risktable()</a></code> to respect x-axis breaks when x-axis is duplicated. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/221" class="external-link">#221</a>)</p></li>
+<li><p>Fixed <code><a href="../reference/add_pvalue.html">add_pvalue()</a></code> function to work with all outcomes in <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code>, not just the first outcome level. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/239" class="external-link">#239</a>, <a href="https://github.com/samrickman" class="external-link">@samrickman</a>)</p></li>
+<li><p>Correcting an argument name partial match in <code>ggplot2::scale_*(labels)</code>. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/211" class="external-link">#211</a>, <a href="https://github.com/DanChaltiel" class="external-link">@DanChaltiel</a>)</p></li>
+<li><p>Updates to account for changes in ggplot2 v4.0.0. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/241" class="external-link">#241</a>)</p></li>
 </ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.1.0" id="ggsurvfit-110">ggsurvfit 1.1.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-110"></a></h2><p class="text-muted">CRAN release: 2024-05-08</p>
