@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.0.9003</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.1.0.9004</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,8 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="ggsurvfit-development-version">ggsurvfit (development version)<a class="anchor" aria-label="anchor" href="#ggsurvfit-development-version"></a></h2>
-<ul><li><p>Fixed confidence interval labels being incorrectly swapped for multi-state models in ‘tidy_survfit()’. Multi-state models now preserve the correct ordering of conf.low and conf.high from the underlying broom::tidy() output. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/215" class="external-link">#215</a>)</p></li>
+<ul><li><p>Added support as a gallery example for combining multiple survival endpoints in <code><a href="../reference/add_risktable.html">add_risktable()</a></code>. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/212" class="external-link">#212</a>)</p></li>
+<li><p>Fixed confidence interval labels being incorrectly swapped for multi-state models in ‘tidy_survfit()’. Multi-state models now preserve the correct ordering of conf.low and conf.high from the underlying broom::tidy() output. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/215" class="external-link">#215</a>)</p></li>
 <li><p>Improved error message when <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> is called with <code>survfit.coxphms</code> objects. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/222" class="external-link">#222</a>)</p></li>
 <li><p>Fixed <code><a href="../reference/add_risktable.html">add_risktable()</a></code> to respect x-axis breaks when x-axis is duplicated. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/221" class="external-link">#221</a>)</p></li>
 <li><p>Fixed <code><a href="../reference/add_pvalue.html">add_pvalue()</a></code> function to work with all outcomes in <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code>, not just the first outcome level. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/239" class="external-link">#239</a>, <a href="https://github.com/samrickman" class="external-link">@samrickman</a>)</p></li>
