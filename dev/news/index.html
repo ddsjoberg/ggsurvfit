@@ -48,7 +48,7 @@
 <li><p>Updates to account for changes in ggplot2 v4.0.0. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/241" class="external-link">#241</a>)</p></li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.1.0" id="ggsurvfit-110">ggsurvfit 1.1.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-110"></a></h2><p class="text-muted">CRAN release: 2024-05-08</p>
+<h2 class="pkg-version" data-toc-text="1.1.0" id="ggsurvfit-110">ggsurvfit 1.1.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-110"></a></h2>
 <ul><li><p>We now allow for negative follow-up times in <code><a href="../reference/tidy_survfit.html">tidy_survfit()</a></code> (and subsequently <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code>). When negative follow-up times are present users should specify <code>survfit(start.time)</code> and we print a note to this effect when not set. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/192" class="external-link">#192</a>)</p></li>
 <li><p>The <code><a href="../reference/tidy_survfit.html">tidy_survfit()</a></code> (and subsequently <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code>) now honor the <code>survfit(start.time)</code> if specified. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/192" class="external-link">#192</a>)</p></li>
 <li><p>Updated legend position syntax to account for changes in {ggplot2} v3.5.0.</p></li>
@@ -57,30 +57,30 @@
 <li><p>Added the “<code>cloglog</code>” transformation option to <code>ggsurvfit(type)</code> and <code>tidy_survfit(type)</code>. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/194" class="external-link">#194</a>)</p></li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.0" id="ggsurvfit-100">ggsurvfit 1.0.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-100"></a></h2><p class="text-muted">CRAN release: 2023-10-31</p>
+<h2 class="pkg-version" data-toc-text="1.0.0" id="ggsurvfit-100">ggsurvfit 1.0.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-100"></a></h2>
 <ul><li><p>By default, a model plot created with <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code> or <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the color aesthetic to plot curves by the stratifying variable(s), and further, <code><a href="../reference/ggcuminc.html">ggcuminc()</a></code> uses the linetype aesthetic for plots that contain multiple outcomes (i.e. competing events). We now introduce the global option <code>"ggsurvfit.switch-color-linetype"</code> to switch these defaults, giving users more flexibility over the output figures. Furthermore, when the <code>linetype_aes=</code> argument is called in a situation when it does not apply, it will be silently ignored (previously, an error message <em>may</em> have been thrown). (<a href="https://github.com/pharmaverse/ggsurvfit/issues/166" class="external-link">#166</a>)</p></li>
 <li><p>Slightly increased the padding to the right of the plot when <code><a href="../reference/scale_ggsurvfit.html">scale_ggsurvfit()</a></code> is called. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/165" class="external-link">#165</a>)</p></li>
 <li><p>Now exporting the utility function <code><a href="../reference/ggsurvfit_align_plots.html">ggsurvfit_align_plots()</a></code> that is used to ensure risktable and the primary plot align. By exporting this function, users will now be able to construct custom risktable graphics. See <code>?ggsurvfit_align_plots()</code> for an example. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/175" class="external-link">#175</a>)</p></li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.3.1" id="ggsurvfit-031">ggsurvfit 0.3.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-031"></a></h2><p class="text-muted">CRAN release: 2023-08-28</p>
+<h2 class="pkg-version" data-toc-text="0.3.1" id="ggsurvfit-031">ggsurvfit 0.3.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-031"></a></h2>
 <ul><li>For transformations in <code><a href="../reference/tidy_survfit.html">tidy_survfit()</a></code> that change the monotonicity of the curve, the <code>conf.low</code> and <code>conf.high</code> column names are now switched. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/154" class="external-link">#154</a>)</li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.3.0" id="ggsurvfit-030">ggsurvfit 0.3.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-030"></a></h2><p class="text-muted">CRAN release: 2023-03-16</p>
+<h2 class="pkg-version" data-toc-text="0.3.0" id="ggsurvfit-030">ggsurvfit 0.3.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-030"></a></h2>
 <ul><li><p>Added feature in <code>add_risktable(risktable_stats=)</code> to accept glue-like syntax—anything inside curly brackets will be evaluated. Users can now place multiple types of statistics on the same row, including allowing users to style the statistics in any way they like by adding rounding/formatting functions within the curly brackets. Users may now also display estimates and confidence limits in the risk table. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/135" class="external-link">#135</a>)</p></li>
 <li><p>Updated <code><a href="../reference/ggsurvfit.html">ggsurvfit()</a></code>, <code><a href="../reference/tidy_survfit.html">tidy_survfit()</a></code>, and <code><a href="../reference/survfit2.html">survfit2()</a></code> to handle <code><a href="https://rdrr.io/pkg/survival/man/coxph.html" class="external-link">survival::coxph()</a></code> models. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/9" class="external-link">#9</a>)</p></li>
 <li><p>Updated the default margin size when a risktable is added to a figure. Namely, the primary plot’s bottom margin is set to zero, along with each risktable’s top and bottom margin. Moreover, the top and bottom margin of the legend is also set to zero.</p></li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.2.1" id="ggsurvfit-021">ggsurvfit 0.2.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-021"></a></h2><p class="text-muted">CRAN release: 2022-12-06</p>
+<h2 class="pkg-version" data-toc-text="0.2.1" id="ggsurvfit-021">ggsurvfit 0.2.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-021"></a></h2>
 <ul><li><p>All calls to <code>aes()</code> have been migrated from <code>ggplot()</code> to the individual geoms, e.g. <code>geom_step()</code>. This was done because adding the <code>aes()</code> call in <code>ggplot()</code> led to an error when a later geom is added with user-created data. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/127" class="external-link">#127</a>)</p></li>
 <li><p>Delay adding the <code>conf.low</code> and <code>conf.high</code> to the ggplot <code>aes()</code> until <code><a href="../reference/add_confidence_interval.html">add_confidence_interval()</a></code> has been called. Previously, these were being added in the first call to <code>ggplot(tidy_data, aes(x = time, y = estimate, ymin = conf.low, ymax = conf.high))</code>. The result was that figures that did <em>not</em> show the confidence interval still created space for the CI in the plot area. This update eliminates that blank space. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/123" class="external-link">#123</a>)</p></li>
 <li><p>Migrated the ‘scales’ package from ‘Imports:’ to ‘Suggests:’, i.e. from a strong to a weak dependency. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/120" class="external-link">#120</a>)</p></li>
 <li><p>Updated ggplot <code>size=</code> argument to <code>linewidth=</code> where needed as of ggplot2 v3.4.0 (<a href="https://github.com/pharmaverse/ggsurvfit/issues/131" class="external-link">#131</a>)</p></li>
 </ul></div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.2.0" id="ggsurvfit-020">ggsurvfit 0.2.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-020"></a></h2><p class="text-muted">CRAN release: 2022-10-15</p>
+<h2 class="pkg-version" data-toc-text="0.2.0" id="ggsurvfit-020">ggsurvfit 0.2.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-020"></a></h2>
 <div class="section level4">
 <h4 id="breaking-changes-0-2-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-2-0"></a></h4>
 <ul><li>Changed the default of the <code>ggsurvfit_build(combine_plots=)</code> argument to <code>TRUE</code>.</li>
@@ -107,7 +107,7 @@
 </ul></div>
 </div>
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.1.0" id="ggsurvfit-010">ggsurvfit 0.1.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-010"></a></h2><p class="text-muted">CRAN release: 2022-08-27</p>
+<h2 class="pkg-version" data-toc-text="0.1.0" id="ggsurvfit-010">ggsurvfit 0.1.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-010"></a></h2>
 <ul><li>First release.</li>
 </ul></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
