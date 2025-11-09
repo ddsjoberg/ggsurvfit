@@ -1,0 +1,233 @@
+# ggsurvfit
+
+## Introduction
+
+The **ggsurvfit** package eases the creation of time-to-event (aka
+survival) summary figures with ggplot2. The concise and modular code
+creates images that are ready for publication or sharing. Competing
+risks cumulative incidence is also supported via
+[`ggcuminc()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggcuminc.md).
+
+## Why ggsurvfit?
+
+- **Use ggplot2 functions:** Each **ggsurvfit** add-on function
+  (e.g. [`add_confidence_interval()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_confidence_interval.md),
+  [`add_risktable()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_risktable.md),
+  etc.) is written as a proper ggplot2
+  [‘geom’](https://ggplot2.tidyverse.org/reference/index.html), meaning
+  the package functions can be woven with ggplot2 functions seamlessly.
+  You don’t need to learn how to style the plot within the ggsurvfit
+  functions: rather, rely on the suite of ggplot2 functions you already
+  know.
+
+- **Publishable Legends:** Raw variable names do not appear in the
+  figure legend, e.g. `"sex=Female"`.
+
+- **Limitless Customization:** You can modify the x-axis scales or any
+  other plot feature and the risk table will still align with the plot.
+
+- **Simple Saving:** Save individual images easily with
+  [`ggplot2::ggsave()`](https://ggplot2.tidyverse.org/reference/ggsave.html).
+
+## Installation
+
+Install **ggsurvfit** from CRAN with:
+
+``` r
+install.packages("ggsurvfit")
+```
+
+You can install the development version from
+[GitHub](https://github.com/pharmaverse/ggsurvfit) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("pharmaverse/ggsurvfit")
+```
+
+## Examples
+
+Review the [**figure
+gallery**](https://www.danieldsjoberg.com/ggsurvfit/articles/gallery.html)
+for many more examples.
+
+The code below constructs a basic {ggsurvfit} figure without
+customization.
+
+``` r
+library(ggsurvfit)
+#> Loading required package: ggplot2
+
+p <- survfit2(Surv(time, status) ~ surg, data = df_colon) |>
+  ggsurvfit(linewidth = 1) +
+  add_confidence_interval() +
+  add_risktable() +
+  add_quantile(y_value = 0.6, color = "gray50", linewidth = 0.75) +
+  scale_ggsurvfit()
+```
+
+Any figure created with {ggsurvfit} can be customized using {ggplot2}
+functions.
+
+``` r
+p +
+  # limit plot to show 8 years and less
+  coord_cartesian(xlim = c(0, 8)) +
+  # update figure labels/titles
+  labs(
+    y = "Percentage Survival",
+    title = "Recurrence by Time From Surgery to Randomization",
+  )
+```
+
+![](reference/figures/README-unnamed-chunk-2-1.png)
+
+## `survfit2()` vs `survfit()`
+
+Both functions have identical inputs, so why do we need
+[`survfit2()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/survfit2.md)?
+The
+[`survfit2()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/survfit2.md)
+tracks the environment from which the function was called, resulting in
+the following benefits.
+
+- We can reliably remove the raw variable names from the figure legend,
+  e.g. `SEX=Female`.
+- P-values can be calculated with `survfit_p()` and added to figures.
+- The items above are often *possible* using
+  [`survfit()`](https://rdrr.io/pkg/survival/man/survfit.html). However,
+  by utilizing the calling
+  [environment](https://adv-r.hadley.nz/environments.html) we are
+  assured the correct elements are found, rather than crossing our
+  fingers that the search path contains the needed elements.
+
+## CDISC ADaM ADTTE
+
+The package also includes gems for those using the [CDISC ADaM ADTTE
+v1.0](https://www.cdisc.org/standards/foundational/adam/adam-basic-data-structure-bds-time-event-tte-analyses-v1-0)
+data model.
+
+If columns `"PARAM"` or `"PARAMCD"` are present in the data frame passed
+to
+[`survfit2()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/survfit2.md),
+their values will be used to construct default labels in the
+[`ggsurvfit()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit.md)
+figure.
+
+The event indicator in ADTTE data sets is named `"CNSR"` and is coded in
+the opposite way the survival package expects outcomes—`1 = 'censored'`
+and `0 = 'event'`. This difference creates an opportunity for errors to
+be introduced in an analysis. The **ggsurvfit** package exports a
+function called
+[`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/Surv_CNSR.md)
+to resolve this concern. The function creates a survival object
+(e.g. [`survival::Surv()`](https://rdrr.io/pkg/survival/man/Surv.html))
+that uses CDISC ADaM ADTTE coding conventions as the default values. The
+function can be used in **ggsurvfit** as well as any other package that
+uses [`survival::Surv()`](https://rdrr.io/pkg/survival/man/Surv.html).
+
+``` r
+survfit(Surv_CNSR() ~ 1, adtte)
+#> Call: survfit(formula = Surv_CNSR() ~ 1, data = adtte)
+#> 
+#>         n events median 0.95LCL 0.95UCL
+#> [1,] 2199    755    3.2     3.1    3.56
+```
+
+## Related Packages
+
+![](reference/figures/README-gt-related-pkgs.png)
+
+# Package index
+
+## Build survfit
+
+- [`survfit2()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/survfit2.md)
+  : Create survival curves
+
+## Build Plot
+
+- [`ggsurvfit()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit.md)
+  : Plot Survival Probability
+- [`ggcuminc()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggcuminc.md)
+  : Plot Cumulative Incidence
+
+## Add to Plot
+
+- [`add_confidence_interval()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_confidence_interval.md)
+  : Add Confidence Interval
+- [`add_risktable()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_risktable.md)
+  : Add risk table
+- [`add_risktable_strata_symbol()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_risktable_strata_symbol.md)
+  : Use Symbol for Strata in Risk Table
+- [`add_quantile()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_quantile.md)
+  : Add Quantile Annotation
+- [`add_pvalue()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_pvalue.md)
+  : Add p-value
+- [`add_censor_mark()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_censor_mark.md)
+  : Add Censor Marking
+- [`add_legend_title()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_legend_title.md)
+  : Add Legend Title
+
+## Themes
+
+- [`theme_risktable_default()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/theme_risktable.md)
+  [`theme_risktable_boxed()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/theme_risktable.md)
+  : Risk Table Themes
+- [`theme_ggsurvfit_default()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/theme_ggsurvfit.md)
+  [`theme_ggsurvfit_KMunicate()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/theme_ggsurvfit.md)
+  : Survfit Plot Themes
+
+## P-values
+
+- [`survfit2_p()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/survfit2_p.md)
+  : Calculate p-value
+- [`format_p()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/format_p.md)
+  : Format p-value
+
+## CDISC
+
+- [`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/Surv_CNSR.md)
+  : Create a Survival Outcome from CDISC Data
+
+## Utilities
+
+- [`tidy_survfit()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/tidy_survfit.md)
+  : Tidy a survfit object
+- [`tidy_cuminc()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/tidy_cuminc.md)
+  : Tidy a cuminc object
+- [`ggsurvfit_build()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit_build.md)
+  : Build 'ggsurvfit' Object
+- [`stat_stepribbon()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/stepribbon.md)
+  [`StatStepribbon`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/stepribbon.md)
+  : Step ribbon statistic
+- [`scale_ggsurvfit()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/scale_ggsurvfit.md)
+  : Apply Scales
+- [`ggsurvfit_options`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit_options.md)
+  : Global Options
+- [`ggsurvfit_align_plots()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/ggsurvfit_align_plots.md)
+  : Align Plots
+
+## Data
+
+- [`df_lung`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/df_lung.md)
+  :
+
+  Formatted Copy of
+  [`survival::lung`](https://rdrr.io/pkg/survival/man/lung.html)
+
+- [`df_colon`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/df_colon.md)
+  :
+
+  Formatted Copy of
+  [`survival::colon`](https://rdrr.io/pkg/survival/man/colon.html)
+
+- [`adtte`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/adtte.md)
+  : Example phase III clinical trial data set
+
+# Articles
+
+### All vignettes
+
+- [Gallery](http://www.danieldsjoberg.com/ggsurvfit/dev/articles/gallery.md):
+- [Themes](http://www.danieldsjoberg.com/ggsurvfit/dev/articles/themes.md):
