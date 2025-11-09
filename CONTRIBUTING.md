@@ -1,0 +1,94 @@
+# Contributing to ggsurvfit
+
+This outlines how to propose a change to ggsurvfit. For more detailed
+info about contributing to this, and other tidyverse packages, please
+see the [**development contributing
+guide**](https://rstd.io/tidy-contrib).
+
+## Fixing typos
+
+You can fix typos, spelling mistakes, or grammatical errors in the
+documentation directly using the GitHub web interface, as long as the
+changes are made in the *source* file. This generally means you’ll need
+to edit [roxygen2
+comments](https://roxygen2.r-lib.org/articles/roxygen2.html) in an `.R`,
+not a `.Rd` file. You can find the `.R` file that generates the `.Rd` by
+reading the comment in the first line.
+
+## Bigger changes
+
+If you want to make a bigger change, please first file an issue and make
+sure someone from the team agrees that it’s needed. If you’ve found a
+bug, please file an issue that illustrates the bug with a minimal
+[reprex](https://www.tidyverse.org/help/#reprex) (this will also help
+you write a unit test, if needed).
+
+### Pull request process
+
+- Fork the package and clone onto your computer. If you haven’t done
+  this before, we recommend using
+  `usethis::create_from_github("pharmaverse/ggsurvfit", fork = TRUE)`.
+
+- Install all development dependencies with
+  `devtools::install_dev_deps()`, and then make sure the package passes
+  R CMD check by running `devtools::check()`. If R CMD check doesn’t
+  pass cleanly, it’s a good idea to ask for help before continuing.
+
+- Create a Git branch for your pull request (PR). We recommend using
+  `usethis::pr_init("brief-description-of-change")`.
+
+- Make your changes, commit to git, and then create a PR by running
+  `usethis::pr_push()`, and following the prompts in your browser. The
+  title of your PR should briefly describe the change. The body of your
+  PR should contain `Fixes #issue-number`.
+
+- For user-facing changes, add a bullet to the top of `NEWS.md`
+  (i.e. just below the first header). Follow the style described in
+  <https://style.tidyverse.org/news.html>.
+
+- Pull request should include unit testing of the new feature or bug
+  fix.
+
+  - Unit tests will typically include testing using the testthat
+    package, and testing of images (i.e. ggplots) using the vdiffr
+    package.
+  - To test the structure of a ggplot object, you have want to first
+    build the plot using
+    [`ggplot2::ggplot_build()`](https://ggplot2.tidyverse.org/reference/ggplot_build.html).
+    Then you can programitcally test the contents of the plot.
+
+- Errors, warnings, and messages are created with
+  [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html),
+  [`cli::cli_warn()`](https://cli.r-lib.org/reference/cli_abort.html),
+  [`cli::cli_inform()`](https://cli.r-lib.org/reference/cli_abort.html).
+  We use the convention to first print the error message, then a helpful
+  message when it applies. For example,
+
+  ``` r
+  cli::cli_abort(c("!" = "There was an error.",
+                   "i" = "a helpful message to resolve error"))
+  ```
+
+  ### Code style
+
+- New code should follow the tidyverse [style
+  guide](https://style.tidyverse.org). You can use the
+  [styler](https://CRAN.R-project.org/package=styler) package to apply
+  these styles, but please don’t restyle code that has nothing to do
+  with your PR.
+
+- We use [roxygen2](https://cran.r-project.org/package=roxygen2), with
+  [Markdown
+  syntax](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd-formatting.html),
+  for documentation.
+
+- We use [testthat](https://cran.r-project.org/package=testthat) for
+  unit tests. Contributions with test cases included are easier to
+  accept.
+
+## Code of Conduct
+
+Please note that the ggsurvfit project is released with a [Contributor
+Code of
+Conduct](http://www.danieldsjoberg.com/ggsurvfit/CODE_OF_CONDUCT.md). By
+contributing to this project you agree to abide by its terms.
