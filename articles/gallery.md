@@ -305,7 +305,7 @@ and width of a the image, and more.
 ``` r
 path_to_image <- file.path(tempdir(), "image.png")
 path_to_image
-#> [1] "/tmp/RtmpX3rbwV/image.png"
+#> [1] "/tmp/Rtmpnj2D06/image.png"
 
 ggsave(file = path_to_image, plot = p)
 #> Saving 7.29 x 4.51 in image
