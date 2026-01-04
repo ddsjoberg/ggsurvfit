@@ -21,14 +21,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/pharmaverse/ggsurvfit/blob/main/DESCRIPTION)
 
-Sjoberg D, Baillie M, Fruechtenicht C, Haesendonckx S, Treis T (2025).
+Sjoberg D, Baillie M, Fruechtenicht C, Haesendonckx S, Treis T (2026).
 *ggsurvfit: Flexible Time-to-Event Figures*. R package version 1.2.0,
 <https://github.com/pharmaverse/ggsurvfit>.
 
     @Manual{,
       title = {ggsurvfit: Flexible Time-to-Event Figures},
       author = {Daniel D. Sjoberg and Mark Baillie and Charlotta Fruechtenicht and Steven Haesendonckx and Tim Treis},
-      year = {2025},
+      year = {2026},
       note = {R package version 1.2.0},
       url = {https://github.com/pharmaverse/ggsurvfit},
     }
