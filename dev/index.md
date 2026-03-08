@@ -115,10 +115,10 @@ their values will be used to construct default labels in the
 figure.
 
 The event indicator in ADTTE data sets is named `"CNSR"` and is coded in
-the opposite way the survival package expects outcomes—`1 = 'censored'`
-and `0 = 'event'`. This difference creates an opportunity for errors to
-be introduced in an analysis. The **ggsurvfit** package exports a
-function called
+the opposite way the survival package expects
+outcomes—`>=1 = 'censored'` and `0 = 'event'`. This difference creates
+an opportunity for errors to be introduced in an analysis. The
+**ggsurvfit** package exports a function called
 [`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/Surv_CNSR.md)
 to resolve this concern. The function creates a survival object
 (e.g. [`survival::Surv()`](https://rdrr.io/pkg/survival/man/Surv.html))

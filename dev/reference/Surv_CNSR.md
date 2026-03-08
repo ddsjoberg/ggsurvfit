@@ -12,7 +12,7 @@ the status/event variable convention used in the
 [survival](https://cran.r-project.org/package=survival) package.
 
 The `AVAL` and `CNSR` arguments are passed to
-`survival::Surv(time = AVAL, event = 1 - CNSR, type = "right", origin = 0)`.
+`survival::Surv(time = AVAL, event = CNSR == 0, type = "right", origin = 0)`.
 
 ## Usage
 
@@ -30,7 +30,7 @@ Surv_CNSR(AVAL, CNSR)
 
 - CNSR:
 
-  The censoring indicator where `1=censored` and `0=death/event`. When
+  The censoring indicator where `>=1=censored` and `0=death/event`. When
   no argument is passed, the default value is a column/vector named
   `CNSR`.
 
@@ -53,7 +53,7 @@ have an event.
 
 The CDISC ADaM ADTTE data model adopts a different coding convention for
 the event/status indicator. Using this convention, the event/status
-variable is named `'CNSR'` and uses the following coding: `censor = 1`,
+variable is named `'CNSR'` and uses the following coding: `censor >= 1`,
 `status/event = 0`.
 
 ## See also

@@ -2,6 +2,12 @@
 
 ## ggsurvfit (development version)
 
+- [`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/Surv_CNSR.md)
+  updated to accept values `>= 1` as censoring values (according to
+  CDISC recommendation).
+  ([\#271](https://github.com/pharmaverse/ggsurvfit/issues/271),
+  [@bundfussr](https://github.com/bundfussr))
+
 ## ggsurvfit 1.2.0
 
 CRAN release: 2025-09-13
