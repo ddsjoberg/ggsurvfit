@@ -2,6 +2,13 @@
 
 ## ggsurvfit (development version)
 
+- Fixed
+  [`add_quantile()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_quantile.md)
+  to use the midpoint of plateau segments when the curve plotted is flat
+  at the requested quantile, consistent with results from
+  [`survival::quantile.survfit()`](https://rdrr.io/pkg/survival/man/quantile.survfit.html)
+  ([\#270](https://github.com/pharmaverse/ggsurvfit/issues/270))
+
 - [`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/Surv_CNSR.md)
   updated to accept values `>= 1` as censoring values (according to
   CDISC recommendation).

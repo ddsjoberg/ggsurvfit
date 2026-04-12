@@ -36,15 +36,15 @@ cuminc(Surv(ttdeath, death_cr) ~ trt, trial) %>%
 #>     time outcome     strata estimate std.error conf.low conf.high n.risk n.event
 #>    <dbl> <chr>       <fct>     <dbl>     <dbl>    <dbl>     <dbl>  <int>   <int>
 #>  1  0    death from… Drug A   0         0      NA         NA          98       0
-#>  2  3.53 death from… Drug A   0         0      NA         NA          98       0
-#>  3  5.33 death from… Drug A   0         0      NA         NA          97       0
-#>  4  6.32 death from… Drug A   0         0      NA         NA          97       0
-#>  5  7.27 death from… Drug A   0.0102    0.0102  8.84e-4    0.0503     97       1
-#>  6  7.38 death from… Drug A   0.0204    0.0144  3.90e-3    0.0652     96       1
-#>  7  8.37 death from… Drug A   0.0204    0.0144  3.90e-3    0.0652     95       0
-#>  8  8.71 death from… Drug A   0.0204    0.0144  3.90e-3    0.0652     94       0
-#>  9  9.24 death from… Drug A   0.0204    0.0144  3.90e-3    0.0652     94       0
-#> 10  9.73 death from… Drug A   0.0204    0.0144  3.90e-3    0.0652     94       0
+#>  2  0    death othe… Drug A   0         0      NA         NA          98       0
+#>  3  0    death from… Drug B   0         0      NA         NA         102       0
+#>  4  0    death othe… Drug B   0         0      NA         NA         102       0
+#>  5  3.53 death from… Drug A   0         0      NA         NA          98       0
+#>  6  3.53 death othe… Drug A   0.0102    0.0102  8.84e-4    0.0503     98       1
+#>  7  3.53 death from… Drug B   0         0      NA         NA         102       0
+#>  8  3.53 death othe… Drug B   0         0      NA         NA         102       0
+#>  9  5.33 death from… Drug A   0         0      NA         NA          97       0
+#> 10  5.33 death othe… Drug A   0.0102    0.0102  8.84e-4    0.0503     97       0
 #> # ℹ 434 more rows
 #> # ℹ 7 more variables: n.censor <int>, cum.event <int>, cum.censor <int>,
 #> #   strata_label <chr>, estimate_type <chr>, estimate_type_label <chr>,
