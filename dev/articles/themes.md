@@ -17,6 +17,7 @@ theme. You can pass any {ggplot2} theme to this argument, or simply add
 a theme using typical {ggplot2} syntax.
 
 ``` r
+
 library(ggsurvfit)
 #> Loading required package: ggplot2
 library(patchwork)
@@ -43,6 +44,7 @@ theme that exported with the ggplot2 package. To construct a custom
 theme, include ggplot2 calls in a list as in the example below.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(theme = list(theme_classic(), theme(legend.position = "top"))) +
   labs(title = "Custom Plot Theme")
@@ -62,6 +64,7 @@ Unlike the plot themes, the risk table themes can only be passed via
 `add_risktable(theme=)`.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_risktable(
@@ -80,6 +83,7 @@ plot title.
 Another risk table theme adds a box around the statistics presented.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_risktable(
@@ -94,6 +98,7 @@ It’s possible to replace the stratum levels with a symbol, which is
 particularly helpful when you have long group labels.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_risktable(risktable_stats = "n.risk") +

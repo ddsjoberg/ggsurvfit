@@ -4,6 +4,7 @@ The gallery exhibits both default plots as well as the many
 modifications one can make.
 
 ``` r
+
 library(ggsurvfit)
 #> Loading required package: ggplot2
 library(patchwork)
@@ -23,6 +24,7 @@ are made with ggplot2 functions.
 - Using the ggplot2 minimal theme
 
 ``` r
+
 gg_default <-
   survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
@@ -58,6 +60,7 @@ use the color and fill aesthetic to change the colors of an unstratified
 estimate.
 
 ``` r
+
 survfit2(Surv(time, status) ~ 1, data = df_colon) %>%
   ggsurvfit(color = "#508050") +
   add_confidence_interval(fill = "#508050") +
@@ -72,6 +75,7 @@ survfit2(Surv(time, status) ~ 1, data = df_colon) %>%
 The default risk table styling is ready for publication.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_confidence_interval() +
@@ -86,6 +90,7 @@ stratum. Let’s also add additional time points where the statistics are
 reported and extend the y axis.
 
 ``` r
+
 ggrisktable <-
   survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
@@ -104,6 +109,7 @@ is a colored rectangle and you can change it to any UTF-8 symbol or text
 string. In the example below, we’ve updated the symbol to a circle.
 
 ``` r
+
 ggrisktable +
   add_risktable_strata_symbol(symbol = "\U25CF", size = 10)
 ```
@@ -115,6 +121,7 @@ You can further customize the risk table using themes and the
 increase the font size of both the risk table text and the y-axis label.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(linewidth = 0.8) +
   add_risktable(
@@ -136,6 +143,7 @@ You can also use [glue](https://glue.tidyverse.org/)-like syntax to
 place multiple statistics on the same row of the risk table.
 
 ``` r
+
 survfit2(Surv(time, status) ~ sex, data = df_lung) %>%
   ggsurvfit() +
   add_risktable(risktable_stats = "{n.risk} ({cum.event})") +
@@ -157,6 +165,7 @@ function allows users to place guidelines by specifying either the
 y-intercept or x-intercept where the lines shall originate.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(linewidth = 0.8) +
   add_censor_mark(size = 2, alpha = 0.2) +
@@ -183,6 +192,7 @@ with the primary plot. Once the plots are built, the can be placed
 side-by-side with {patchwork} or {cowplot}.
 
 ``` r
+
 p <-
   survfit2(Surv(time, status) ~ 1, df_colon) %>%
   ggsurvfit() +
@@ -200,6 +210,7 @@ Combine with
 [`patchwork::wrap_plots()`](https://patchwork.data-imaginist.com/reference/wrap_plots.html)
 
 ``` r
+
 wrap_plots(built_p, built_p, ncol = 2)
 ```
 
@@ -207,6 +218,7 @@ To use patchwork plot arithmetic, each plot must be wrapped in
 [`patchwork::wrap_elements()`](https://patchwork.data-imaginist.com/reference/wrap_elements.html)
 
 ``` r
+
 wrap_elements(built_p) | wrap_elements(built_p)
 ```
 
@@ -216,6 +228,7 @@ Combine with
 [`cowplot::plot_grid()`](https://wilkelab.org/cowplot/reference/plot_grid.html)
 
 ``` r
+
 cowplot::plot_grid(built_p, built_p, ncol = 2)
 ```
 
@@ -229,6 +242,7 @@ function. P-values can be placed either in the figure caption (the
 default) or in the plot area as an annotation.
 
 ``` r
+
 p <- survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   scale_ggsurvfit()
@@ -270,6 +284,7 @@ and make other scale changes to the scales, such as, specifying the
 breaks on the x-axis.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(linewidth = 1) +
   add_confidence_interval() +
@@ -285,6 +300,7 @@ free from the event with transformations. Custom transformations are
 also available.
 
 ``` r
+
 p <-
   survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(type = "risk", linewidth = 0.8) +
@@ -303,9 +319,10 @@ which allows you to specify the output file format, the DPI, the height
 and width of a the image, and more.
 
 ``` r
+
 path_to_image <- file.path(tempdir(), "image.png")
 path_to_image
-#> [1] "/tmp/RtmpIytH1p/image.png"
+#> [1] "/tmp/RtmpfsBdS5/image.png"
 
 ggsave(file = path_to_image, plot = p)
 #> Saving 7.29 x 4.51 in image
@@ -318,6 +335,7 @@ can both weave any {ggplot2} functions **and** ggplot2 extensions, such
 as {gghighlight} and {ggeasy}.
 
 ``` r
+
 survfit2(Surv(time, status) ~ rx, data = df_colon) %>%
   ggsurvfit(linewidth = 1) +
   scale_ggsurvfit() +
@@ -348,6 +366,7 @@ to create the data frame that is used to create the figure. In the data
 frame, there is a column named `"strata"`, which we will facet over.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_confidence_interval() +
@@ -365,6 +384,7 @@ You may need a black and white figure and that is achieved using
 grey-scale ggplot2 functions.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit() +
   add_confidence_interval() +
@@ -385,6 +405,7 @@ the
 theme along with these function options.
 
 ``` r
+
 survfit2(Surv(time, status) ~ surg, data = df_colon) %>%
   ggsurvfit(linetype_aes = TRUE) +
   add_confidence_interval() +
@@ -406,6 +427,7 @@ Progression-Free Survival) on the same plot, stack your data so each
 patient has multiple rows—one for each endpoint.
 
 ``` r
+
 # Create stacked data with multiple endpoints
 stacked_adtte <- 
   adtte %>%
@@ -446,6 +468,7 @@ users more flexibility over the output figures. Review
 for details.
 
 ``` r
+
 options("ggsurvfit.switch-color-linetype" = TRUE)
 
 tidycmprsk::cuminc(Surv(ttdeath, death_cr) ~ 1, tidycmprsk::trial) %>%
@@ -463,6 +486,7 @@ survival time. If the hazards are proportional across groups, this plot
 will yield parallel curves.
 
 ``` r
+
 survfit2(Surv(time, status) ~ sex, data = df_lung) %>%
   ggsurvfit(type = "cloglog") +
   scale_x_continuous(transform = "log")
@@ -478,6 +502,7 @@ Regression models. Any stratifying levels must be wrapped in a
 RHS of the formula.
 
 ``` r
+
 library(survival)
 
 coxph(Surv(time, status) ~ age + strata(surg), data = df_colon) %>%

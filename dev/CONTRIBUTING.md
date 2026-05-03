@@ -65,6 +65,7 @@ you write a unit test, if needed).
   message when it applies. For example,
 
   ``` r
+
   cli::cli_abort(c("!" = "There was an error.",
                    "i" = "a helpful message to resolve error"))
   ```
