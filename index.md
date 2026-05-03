@@ -34,6 +34,7 @@ risks cumulative incidence is also supported via
 Install **ggsurvfit** from CRAN with:
 
 ``` r
+
 install.packages("ggsurvfit")
 ```
 
@@ -41,6 +42,7 @@ You can install the development version from
 [GitHub](https://github.com/pharmaverse/ggsurvfit) with:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("pharmaverse/ggsurvfit")
 ```
@@ -55,6 +57,7 @@ The code below constructs a basic {ggsurvfit} figure without
 customization.
 
 ``` r
+
 library(ggsurvfit)
 #> Loading required package: ggplot2
 
@@ -70,6 +73,7 @@ Any figure created with {ggsurvfit} can be customized using {ggplot2}
 functions.
 
 ``` r
+
 p +
   # limit plot to show 8 years and less
   coord_cartesian(xlim = c(0, 8)) +
@@ -127,6 +131,7 @@ function can be used in **ggsurvfit** as well as any other package that
 uses [`survival::Surv()`](https://rdrr.io/pkg/survival/man/Surv.html).
 
 ``` r
+
 survfit(Surv_CNSR() ~ 1, adtte)
 #> Call: survfit(formula = Surv_CNSR() ~ 1, data = adtte)
 #> 
