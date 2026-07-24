@@ -3,6 +3,16 @@
 ## ggsurvfit (development version)
 
 - Fixed
+  [`add_pvalue()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_pvalue.md)
+  reporting the Gray-test p-value for the wrong competing event when the
+  outcome ordering from
+  [`tidycmprsk::tidy()`](https://generics.r-lib.org/reference/tidy.html)
+  and
+  [`tidycmprsk::glance()`](https://generics.r-lib.org/reference/glance.html)
+  differed. The p-value is now matched to the plotted outcome by name.
+  ([\#277](https://github.com/pharmaverse/ggsurvfit/issues/277))
+
+- Fixed
   [`add_quantile()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_quantile.md)
   to use the midpoint of plateau segments when the curve plotted is flat
   at the requested quantile, consistent with results from

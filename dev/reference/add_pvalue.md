@@ -12,7 +12,7 @@ or
 [`tidycmprsk::glance()`](https://generics.r-lib.org/reference/glance.html).
 Examples of custom placement located in the help file for `survfit_p()`.
 
-Competing risks modeld displaying multiple outcomes are not supported by
+Competing risks models displaying multiple outcomes are not supported by
 `add_pvalue()`.
 
 ## Usage

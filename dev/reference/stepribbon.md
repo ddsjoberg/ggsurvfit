@@ -20,11 +20,6 @@ stat_stepribbon(
 StatStepribbon
 ```
 
-## Format
-
-An object of class `StatStepRibbon` (inherits from `Stat`, `ggproto`,
-`gg`) of length 3.
-
 ## Arguments
 
 - mapping:
