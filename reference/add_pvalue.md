@@ -12,8 +12,8 @@ or
 [`tidycmprsk::glance()`](https://generics.r-lib.org/reference/glance.html).
 Examples of custom placement located in the help file for `survfit_p()`.
 
-When a competing risks figure includes multiple outcomes, only the
-p-value comparing stratum for the *first* outcome can be placed.
+Competing risks models displaying multiple outcomes are not supported by
+`add_pvalue()`.
 
 ## Usage
 

@@ -6,6 +6,8 @@
   maintainer, copyright holder.
   [](https://orcid.org/0000-0003-0862-2018)
 
+- **Shreya Sreeram**. Author.
+
 - **[Mark Baillie](https://graphicsprinciples.github.io/)**. Author.
 
 - **Charlotta Fruechtenicht**. Author.
@@ -21,14 +23,14 @@
 Source:
 [`DESCRIPTION`](https://github.com/pharmaverse/ggsurvfit/blob/main/DESCRIPTION)
 
-Sjoberg D, Baillie M, Fruechtenicht C, Haesendonckx S, Treis T (2026).
-*ggsurvfit: Flexible Time-to-Event Figures*. R package version 1.2.0,
-<https://github.com/pharmaverse/ggsurvfit>.
+Sjoberg D, Sreeram S, Baillie M, Fruechtenicht C, Haesendonckx S, Treis
+T (2026). *ggsurvfit: Flexible Time-to-Event Figures*. R package version
+1.2.1, <https://github.com/pharmaverse/ggsurvfit>.
 
     @Manual{,
       title = {ggsurvfit: Flexible Time-to-Event Figures},
-      author = {Daniel D. Sjoberg and Mark Baillie and Charlotta Fruechtenicht and Steven Haesendonckx and Tim Treis},
+      author = {Daniel D. Sjoberg and Shreya Sreeram and Mark Baillie and Charlotta Fruechtenicht and Steven Haesendonckx and Tim Treis},
       year = {2026},
-      note = {R package version 1.2.0},
+      note = {R package version 1.2.1},
       url = {https://github.com/pharmaverse/ggsurvfit},
     }

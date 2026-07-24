@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,12 @@
       <small>Source: <a href="https://github.com/pharmaverse/ggsurvfit/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.2.1" id="ggsurvfit-121">ggsurvfit 1.2.1<a class="anchor" aria-label="anchor" href="#ggsurvfit-121"></a></h2>
+<ul><li><p>Fixed <code><a href="../reference/add_pvalue.html">add_pvalue()</a></code> reporting the Gray-test p-value for the wrong competing event when the outcome ordering from <code><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidycmprsk::tidy()</a></code> and <code><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">tidycmprsk::glance()</a></code> differed. The p-value is now matched to the plotted outcome by name. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/277" class="external-link">#277</a>)</p></li>
+<li><p>Fixed <code><a href="../reference/add_quantile.html">add_quantile()</a></code> to use the midpoint of plateau segments when the curve plotted is flat at the requested quantile, consistent with results from <code><a href="https://rdrr.io/pkg/survival/man/quantile.survfit.html" class="external-link">survival::quantile.survfit()</a></code> (<a href="https://github.com/pharmaverse/ggsurvfit/issues/270" class="external-link">#270</a>)</p></li>
+<li><p><code><a href="../reference/Surv_CNSR.html">Surv_CNSR()</a></code> updated to accept values <code>&gt;= 1</code> as censoring values (according to CDISC recommendation). (<a href="https://github.com/pharmaverse/ggsurvfit/issues/271" class="external-link">#271</a>, <a href="https://github.com/bundfussr" class="external-link">@bundfussr</a>)</p></li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="1.2.0" id="ggsurvfit-120">ggsurvfit 1.2.0<a class="anchor" aria-label="anchor" href="#ggsurvfit-120"></a></h2><p class="text-muted">CRAN release: 2025-09-13</p>
 <ul><li><p>Updates to account for changes in ggplot2 v4.0.0. (<a href="https://github.com/pharmaverse/ggsurvfit/issues/241" class="external-link">#241</a>)</p></li>
@@ -115,7 +121,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
+  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, Shreya Sreeram, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
 </div>
 
 <div class="pkgdown-footer-right">

@@ -7,7 +7,7 @@ uses CDISC ADaM ADTTE coding conventions and converts the arguments to the
 status/event variable convention used in the
 survival package.
 The AVAL and CNSR arguments are passed to
-survival::Surv(time = AVAL, event = 1 - CNSR, type = "right", origin = 0).'><meta property="og:description" content='The aim of Surv_CNSR() is to map the inconsistency in data convention between
+survival::Surv(time = AVAL, event = CNSR == 0, type = "right", origin = 0).'><meta property="og:description" content='The aim of Surv_CNSR() is to map the inconsistency in data convention between
 the survival package and
 CDISC ADaM ADTTE data model.
 The function creates a survival object (e.g. survival::Surv()) that
@@ -15,7 +15,7 @@ uses CDISC ADaM ADTTE coding conventions and converts the arguments to the
 status/event variable convention used in the
 survival package.
 The AVAL and CNSR arguments are passed to
-survival::Surv(time = AVAL, event = 1 - CNSR, type = "right", origin = 0).'><meta property="og:image" content="http://www.danieldsjoberg.com/ggsurvfit/logo.png"></head><body>
+survival::Surv(time = AVAL, event = CNSR == 0, type = "right", origin = 0).'><meta property="og:image" content="http://www.danieldsjoberg.com/ggsurvfit/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -23,7 +23,7 @@ survival::Surv(time = AVAL, event = 1 - CNSR, type = "right", origin = 0).'><met
 
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@ uses CDISC ADaM ADTTE coding conventions and converts the arguments to the
 status/event variable convention used in the
 <a href="https://cran.r-project.org/package=survival" class="external-link">survival</a> package.</p>
 <p>The <code>AVAL</code> and <code>CNSR</code> arguments are passed to
-<code>survival::Surv(time = AVAL, event = 1 - CNSR, type = "right", origin = 0)</code>.</p>
+<code>survival::Surv(time = AVAL, event = CNSR == 0, type = "right", origin = 0)</code>.</p>
     </div>
 
     <div class="section level2">
@@ -81,7 +81,7 @@ When no argument is passed, the default value is a column/vector named <code>AVA
 
 
 <dt id="arg-cnsr">CNSR<a class="anchor" aria-label="anchor" href="#arg-cnsr"></a></dt>
-<dd><p>The censoring indicator where <code>1=censored</code> and <code>0=death/event</code>.
+<dd><p>The censoring indicator where <code>&gt;=1=censored</code> and <code>0=death/event</code>.
 When no argument is passed, the default value is a column/vector named <code>CNSR</code>.</p></dd>
 
 </dl></div>
@@ -106,7 +106,7 @@ A final but risky option is to omit the indicator variable, in which case
 all subjects are assumed to have an event.</p>
 <p>The CDISC ADaM ADTTE data model adopts a different coding convention for
 the event/status indicator. Using this convention, the event/status variable
-is named <code>'CNSR'</code> and uses the following coding: <code>censor = 1</code>, <code>status/event = 0</code>.</p>
+is named <code>'CNSR'</code> and uses the following coding: <code>censor &gt;= 1</code>, <code>status/event = 0</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -144,7 +144,7 @@ is named <code>'CNSR'</code> and uses the following coding: <code>censor = 1</co
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
+  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, Shreya Sreeram, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
 </div>
 
 <div class="pkgdown-footer-right">

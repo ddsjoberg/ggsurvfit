@@ -7,8 +7,7 @@ add_pvalue("annotation"): Add a p-value text annotation via ggplot2::annotation(
 
 P-values are calculated with survival::survdiff() or tidycmprsk::glance().
 Examples of custom placement located in the help file for survfit_p().
-When a competing risks figure includes multiple outcomes, only the p-value
-comparing stratum for the first outcome can be placed.'><meta property="og:description" content='
+Competing risks models displaying multiple outcomes are not supported by add_pvalue().'><meta property="og:description" content='
 
 add_pvalue("caption"): Add a p-value to the figure via ggplot2::labs(caption=)
 add_pvalue("annotation"): Add a p-value text annotation via ggplot2::annotation("text")
@@ -16,8 +15,7 @@ add_pvalue("annotation"): Add a p-value text annotation via ggplot2::annotation(
 
 P-values are calculated with survival::survdiff() or tidycmprsk::glance().
 Examples of custom placement located in the help file for survfit_p().
-When a competing risks figure includes multiple outcomes, only the p-value
-comparing stratum for the first outcome can be placed.'><meta property="og:image" content="http://www.danieldsjoberg.com/ggsurvfit/logo.png"></head><body>
+Competing risks models displaying multiple outcomes are not supported by add_pvalue().'><meta property="og:image" content="http://www.danieldsjoberg.com/ggsurvfit/logo.png"></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
@@ -25,7 +23,7 @@ comparing stratum for the first outcome can be placed.'><meta property="og:image
 
     <a class="navbar-brand me-2" href="../index.html">ggsurvfit</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,8 +60,7 @@ comparing stratum for the first outcome can be placed.'><meta property="og:image
 <li><p><code>add_pvalue("annotation")</code>: Add a p-value text annotation via <code>ggplot2::annotation("text")</code></p></li>
 </ul><p>P-values are calculated with <code><a href="https://rdrr.io/pkg/survival/man/survdiff.html" class="external-link">survival::survdiff()</a></code> or <code><a href="https://generics.r-lib.org/reference/glance.html" class="external-link">tidycmprsk::glance()</a></code>.
 Examples of custom placement located in the help file for <code>survfit_p()</code>.</p>
-<p>When a competing risks figure includes multiple outcomes, only the p-value
-comparing stratum for the <em>first</em> outcome can be placed.</p>
+<p>Competing risks models displaying multiple outcomes are not supported by <code>add_pvalue()</code>.</p>
     </div>
 
     <div class="section level2">
@@ -138,7 +135,7 @@ are <code>x=</code> and <code>y=</code> to place the p-value at the specified co
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
+  <p>Developed by <a href="https://www.danieldsjoberg.com/" class="external-link">Daniel D. Sjoberg</a>, Shreya Sreeram, <a href="https://graphicsprinciples.github.io/" class="external-link">Mark Baillie</a>, Charlotta Fruechtenicht, Steven Haesendonckx, Tim Treis.</p>
 </div>
 
 <div class="pkgdown-footer-right">

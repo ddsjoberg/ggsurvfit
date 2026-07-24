@@ -24,6 +24,11 @@ Useful links:
 
 Authors:
 
+- Daniel D. Sjoberg <danield.sjoberg@gmail.com>
+  ([ORCID](https://orcid.org/0000-0003-0862-2018)) \[copyright holder\]
+
+- Shreya Sreeram <shreyasreeram27@gmail.com>
+
 - Mark Baillie <bailliem@gmail.com>
 
 - Charlotta Fruechtenicht <charlotta.fruechtenicht@roche.com>

@@ -1,5 +1,30 @@
 # Changelog
 
+## ggsurvfit 1.2.1
+
+- Fixed
+  [`add_pvalue()`](http://www.danieldsjoberg.com/ggsurvfit/reference/add_pvalue.md)
+  reporting the Gray-test p-value for the wrong competing event when the
+  outcome ordering from
+  [`tidycmprsk::tidy()`](https://generics.r-lib.org/reference/tidy.html)
+  and
+  [`tidycmprsk::glance()`](https://generics.r-lib.org/reference/glance.html)
+  differed. The p-value is now matched to the plotted outcome by name.
+  ([\#277](https://github.com/pharmaverse/ggsurvfit/issues/277))
+
+- Fixed
+  [`add_quantile()`](http://www.danieldsjoberg.com/ggsurvfit/reference/add_quantile.md)
+  to use the midpoint of plateau segments when the curve plotted is flat
+  at the requested quantile, consistent with results from
+  [`survival::quantile.survfit()`](https://rdrr.io/pkg/survival/man/quantile.survfit.html)
+  ([\#270](https://github.com/pharmaverse/ggsurvfit/issues/270))
+
+- [`Surv_CNSR()`](http://www.danieldsjoberg.com/ggsurvfit/reference/Surv_CNSR.md)
+  updated to accept values `>= 1` as censoring values (according to
+  CDISC recommendation).
+  ([\#271](https://github.com/pharmaverse/ggsurvfit/issues/271),
+  [@bundfussr](https://github.com/bundfussr))
+
 ## ggsurvfit 1.2.0
 
 CRAN release: 2025-09-13
