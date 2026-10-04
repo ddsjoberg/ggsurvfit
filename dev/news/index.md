@@ -2,6 +2,10 @@
 
 ## ggsurvfit (development version)
 
+## ggsurvfit 1.2.1
+
+CRAN release: 2026-07-24
+
 - Fixed
   [`add_pvalue()`](http://www.danieldsjoberg.com/ggsurvfit/dev/reference/add_pvalue.md)
   reporting the Gray-test p-value for the wrong competing event when the
